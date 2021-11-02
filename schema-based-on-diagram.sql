@@ -62,3 +62,15 @@ CREATE TABLE diagnosis (
   FOREIGN KEY (treatment_id)
   REFERENCES treatments(id)
 );
+
+CREATE INDEX medical_histories_desc ON medical_histories(patient_id);
+
+CREATE INDEX invoices_desc ON invoices(medical_history_id);
+
+CREATE INDEX invoice_items_desc_1 ON invoice_items(invoice_id);
+
+CREATE INDEX invoice_items_desc_2 ON invoice_items(treatment_id);
+
+CREATE INDEX diagnosis_desc_1 ON diagnosis(medical_id);
+
+CREATE INDEX diagnosis_desc_2 ON diagnosis(treatment_id);
